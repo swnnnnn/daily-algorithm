@@ -1,4 +1,4 @@
-package com.algorithm;
+package com.algorithm.practice;
 
 public class Practice1 {
 
