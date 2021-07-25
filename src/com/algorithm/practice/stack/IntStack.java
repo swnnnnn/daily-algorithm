@@ -6,6 +6,17 @@ public class IntStack {
     private int ptr;
     private int[] stk;
 
+    public IntStack(int capacity) {
+        ptr = 0;
+        max = capacity;
+
+        try {
+            stk = new int[max];
+        } catch (OutOfMemoryError e) {
+            max = 0;
+        }
+    }
+
     public class EmptyStackException extends RuntimeException {
         public EmptyStackException() {}
     }
@@ -55,17 +66,6 @@ public class IntStack {
             for (int i = 0; i < ptr; i++) {
                 System.out.println(stk[i] + ", ");
             }
-        }
-    }
-
-    public IntStack(int capacity) {
-        ptr = 0;
-        max = capacity;
-
-        try {
-            stk = new int[max];
-        } catch (OutOfMemoryError e) {
-            max = 0;
         }
     }
 }
